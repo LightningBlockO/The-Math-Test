@@ -28,5 +28,12 @@ public class TestManager : MonoBehaviour
         {
             classLights.SetActive(false);
         }
+        if (currentLevel + 1 != Levels.Length)
+        {
+            Levels[currentLevel].SetActive(false);
+
+            currentLevel++;
+            Levels[currentLevel].SetActive(true);
+        }
     }
 }

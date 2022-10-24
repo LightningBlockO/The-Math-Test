@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1552877}
   - component: {fileID: 1552880}
   - component: {fileID: 1552881}
+  - component: {fileID: 1552882}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -221,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15dfe7cc1de83d4cb11a39b82504ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 15
+  sensitivity: 7
 --- !u!114 &1552881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +256,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1552882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11e597954df9094f954ca2a4845e84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camOne: {fileID: 1552876}
+  camTwo: {fileID: 6255997}
 --- !u!1 &1591621
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,13 +404,14 @@ GameObject:
   - component: {fileID: 6256000}
   - component: {fileID: 6255999}
   - component: {fileID: 6255998}
+  - component: {fileID: 6256002}
   m_Layer: 0
   m_Name: TestPov
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6255998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +511,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &6256002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6255997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11e597954df9094f954ca2a4845e84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camOne: {fileID: 6255997}
+  camTwo: {fileID: 1552876}
 --- !u!1 &32686550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &324589366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2508,7 +2538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &672293253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3058,7 +3088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &721213925
 RectTransform:
   m_ObjectHideFlags: 0
