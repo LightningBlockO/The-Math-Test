@@ -5,8 +5,11 @@ using UnityEngine;
 public class TestManager : MonoBehaviour
 {
     public GameObject[] Levels;
+    public GameObject[] Fails;
+    public GameObject classLights;
 
     int currentLevel;
+    int incorrect;
 
     public void correctAnswer()
     {
@@ -16,6 +19,14 @@ public class TestManager : MonoBehaviour
 
             currentLevel++;
             Levels[currentLevel].SetActive(true);
+        }
+    }
+
+    public void wrongAnswer()
+    {
+        if(incorrect + 1 != Fails.Length)
+        {
+            classLights.SetActive(false);
         }
     }
 }
