@@ -7,6 +7,17 @@ public class TestManager : MonoBehaviour
     public GameObject[] Levels;
     public GameObject[] Fails;
     public GameObject classLights;
+    public GameObject computerLight;
+    public GameObject door;
+    public GameObject blood;
+
+    public AudioSource lightHum;
+    public AudioSource lightOff;
+    public AudioSource normalBGM;
+    public AudioSource distortedBGM;
+    public AudioSource computerStart;
+    public AudioSource doorCreak;
+    public AudioSource darkBGM;
 
     int currentLevel;
     int incorrect;
@@ -24,10 +35,37 @@ public class TestManager : MonoBehaviour
 
     public void wrongAnswer()
     {
-        if(incorrect + 1 != Fails.Length)
+        switch (incorrect)
         {
-            classLights.SetActive(false);
+            case 0:
+                lightHum.Stop();
+                lightOff.Play();
+                classLights.SetActive(false);
+                break;
+
+            case 1:
+                normalBGM.Stop();
+                distortedBGM.Play();
+                break;
+
+            case 2:
+                computerStart.Play();
+                computerLight.SetActive(true);
+                break;
+
+            case 3:
+                Destroy(door);
+                doorCreak.Play();
+                break;
+
+            case 4:
+                distortedBGM.Stop();
+                darkBGM.Play();
+                blood.SetActive(true);
+                break;
+
         }
+
         if (currentLevel + 1 != Levels.Length)
         {
             Levels[currentLevel].SetActive(false);
@@ -35,5 +73,7 @@ public class TestManager : MonoBehaviour
             currentLevel++;
             Levels[currentLevel].SetActive(true);
         }
+
+        incorrect++;
     }
 }
