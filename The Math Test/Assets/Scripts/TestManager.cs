@@ -10,6 +10,8 @@ public class TestManager : MonoBehaviour
     public GameObject computerLight;
     public GameObject door;
     public GameObject blood;
+    public GameObject monster;
+    public GameObject monster2;
 
     public AudioSource lightHum;
     public AudioSource lightOff;
@@ -18,6 +20,8 @@ public class TestManager : MonoBehaviour
     public AudioSource computerStart;
     public AudioSource doorCreak;
     public AudioSource darkBGM;
+    public AudioSource monsterBreath;
+    public AudioSource monsterSound;
 
     int currentLevel;
     int incorrect;
@@ -64,6 +68,16 @@ public class TestManager : MonoBehaviour
                 blood.SetActive(true);
                 break;
 
+            case 5:
+                monster.SetActive(true);
+                monsterBreath.Play();
+                break;
+
+            case 6:
+                monster.SetActive(false);
+                monster2.SetActive(true);
+                monsterSound.Play();
+                break;
         }
 
         if (currentLevel + 1 != Levels.Length)
