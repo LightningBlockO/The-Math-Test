@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -90,10 +91,15 @@ public class TestManager : MonoBehaviour
                 break;
 
             case 7:
-                monsterScream.Play(5);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                monsterScream.Play();
+                
+                IEnumerator WaitForSceneLoad()
+                {
+                    yield return new WaitForSeconds(3);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                StartCoroutine(WaitForSceneLoad());
                 break;
-
         }
 
         if (currentLevel + 1 != Levels.Length)
@@ -105,5 +111,7 @@ public class TestManager : MonoBehaviour
         }
 
         incorrect++;
+
+        
     }
 }
