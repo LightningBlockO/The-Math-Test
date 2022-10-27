@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class TestManager : MonoBehaviour
     public GameObject monster;
     public GameObject monster2;
 
+    public GameObject tip1;
+    public GameObject tip2;
+    public GameObject tip3;
+
     public AudioSource lightHum;
     public AudioSource lightOff;
     public AudioSource normalBGM;
@@ -22,6 +27,7 @@ public class TestManager : MonoBehaviour
     public AudioSource darkBGM;
     public AudioSource monsterBreath;
     public AudioSource monsterSound;
+    public AudioSource monsterScream;
 
     int currentLevel;
     int incorrect;
@@ -45,6 +51,8 @@ public class TestManager : MonoBehaviour
                 lightHum.Stop();
                 lightOff.Play();
                 classLights.SetActive(false);
+                tip1.SetActive(false);
+                tip2.SetActive(true);
                 break;
 
             case 1:
@@ -55,6 +63,8 @@ public class TestManager : MonoBehaviour
             case 2:
                 computerStart.Play();
                 computerLight.SetActive(true);
+                tip2.SetActive(false);
+                tip3.SetActive(true);
                 break;
 
             case 3:
@@ -78,6 +88,12 @@ public class TestManager : MonoBehaviour
                 monster2.SetActive(true);
                 monsterSound.Play();
                 break;
+
+            case 7:
+                monsterScream.Play(5);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
+
         }
 
         if (currentLevel + 1 != Levels.Length)
